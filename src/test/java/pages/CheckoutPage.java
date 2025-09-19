@@ -45,7 +45,7 @@ public class CheckoutPage extends BasePage{
         String actualLower = actualError.toLowerCase();
 
         if (!actualLower.contains(expectedLower)) {
-            TestContext.addFailure("Login error message verification failed!\nExpected to contain: '" + msg + "'\nActual message: '" + actualError + "'\n");
+            TestContext.addFailure("Checkout error message verification failed!\nExpected to contain: '" + msg + "'\nActual message: '" + actualError + "'\n");
         } 
     }
 

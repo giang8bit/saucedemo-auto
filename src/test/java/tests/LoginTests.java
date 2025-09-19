@@ -17,7 +17,7 @@ public class LoginTests extends BaseTest {
         
         productPage = loginPage.loginAccountAs(Config.STANDARD_USER, Config.PASSWORD);
         // Verify that we successfully landed on the product page
-        productPage.verifyProductPageLoaded("Swag Labs");
+        productPage.verifyProductPageLoaded();
 
         assertFinalResult();
     }

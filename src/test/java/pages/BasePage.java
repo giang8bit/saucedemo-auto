@@ -105,4 +105,12 @@ public abstract class BasePage {
             TestContext.addFailure("\r\n" + pElementName + " with expected text: " + pExpectedResult + ". Current text is: " + actualResult);
         }
     }
+
+    	public void verifyWebsiteTitle(String pExpectedResult) {
+		String ActualResult = driver.getTitle();
+		if (!ActualResult.equals(pExpectedResult)) {
+			 TestContext.addFailure("Page title is different\nExpected to contain: '" + pExpectedResult + "'\nActual title: '" + ActualResult + "'\n");
+		}
+	
+	}
 }

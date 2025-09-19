@@ -29,8 +29,7 @@ public class ProductPage extends BasePage {
     public ProductPage verifyCurrentItemInCartBadge(int epxectedNumber) {
         int actualItemNumber = Integer.parseInt(getTextElement(cartBadge));
         if (actualItemNumber != epxectedNumber) {
-            TestContext.addFailure(String.format("Cart badge item number verification failed!\nExpected: %d\nActual: %d\n",
-                epxectedNumber, actualItemNumber));
+            TestContext.addFailure("Cart badge item number verification failed!\nExpected: " + epxectedNumber + "\nActual: " + actualItemNumber + "\n");
         } 
         return this;
     }
@@ -50,14 +49,9 @@ public class ProductPage extends BasePage {
         return new CartPage(driver);
     }
 
-    public void verifyProductPageLoaded(String expectedTitle) {
-        String actualTitle = driver.getTitle();
+    public void verifyProductPageLoaded() {
+        verifyWebsiteTitle("Swag Labs");
         
-        if (!actualTitle.contains(expectedTitle)) {
-            TestContext.addFailure(String.format("Page title is different\nExpected to contain: '%s'\nActual message: '%s'\n", expectedTitle, actualTitle));
-        } else {
-            TestContext.addSuccess("Page title verification passed: " + actualTitle);
-        }
     }
     private List<Double> extractPricesFromPage() {
         List<WebElement> prices = driver.findElements(By.className("inventory_item_price"));
@@ -79,8 +73,7 @@ public class ProductPage extends BasePage {
         
         // Compare actual vs expected order
         if (!actualPrices.equals(expectedSortedPrices)) {
-            TestContext.addFailure(String.format("Price sorting verification failed!\nExpected order (low to high): %s\nActual order: %s\n", 
-                expectedSortedPrices, actualPrices));
+            TestContext.addFailure("Price sorting verification failed!\nExpected order (low to high): " + expectedSortedPrices + "\nActual order: " + actualPrices + "\n");
         } 
     
         return this;
@@ -96,9 +89,8 @@ public class ProductPage extends BasePage {
         
         // Compare actual vs expected order
         if (!actualPrices.equals(expectedSortedPrices)) {
-            TestContext.addFailure(String.format("Price sorting verification failed!\nExpected order (high to low): %s\nActual order: %s\n", 
-                expectedSortedPrices, actualPrices));
-        }
+            TestContext.addFailure("Price sorting verification failed!\nExpected order (high to low): " + expectedSortedPrices + "\nActual order: " + actualPrices + "\n");
+            }
         
         return this;
     }    
