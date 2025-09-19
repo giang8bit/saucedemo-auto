@@ -21,8 +21,8 @@ public class LoginPage extends BasePage {
     private static final By errorTxt = By.cssSelector("[data-test='error']");
 
     public LoginPage(WebDriver driver) {
-		super(driver);
-	}
+        super(driver);
+    }
 
     public LoginPage openSaucedemo() {
         driver.get(Config.BASE_URL);
@@ -42,13 +42,13 @@ public class LoginPage extends BasePage {
         String actualLower = actualError.toLowerCase();
 
         if (!actualLower.contains(expectedLower)) {
-            TestContext.addFailure("Login error message verification failed!\nExpected to contain: '" + msg + "'\nActual message: '" + actualError + "'\n");
-        } 
+            TestContext.addFailure("Login error message verification failed!\nExpected to contain: '" + msg
+                    + "'\nActual message: '" + actualError + "'\n");
+        }
     }
 
     private String getError() {
         return getTextElement(errorTxt);
     }
-
 
 }

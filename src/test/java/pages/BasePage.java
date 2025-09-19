@@ -21,20 +21,19 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utils.Config;
-import utils.TCResult;
 import utils.TestContext;
 
 public abstract class BasePage {
 
-    protected WebDriver driver=null;
+    protected WebDriver driver = null;
     private int shortTimeout = 3;
     private int longTimeout = 15;
 
     public BasePage(WebDriver driver) {
-		super();
-		this.driver = driver;
-	}
-     
+        super();
+        this.driver = driver;
+    }
+
     public void clickToElement(By pBy) {
         WebElement element = driver.findElement(pBy);
         element.click();
@@ -56,12 +55,12 @@ public abstract class BasePage {
         element.clear();
         element.sendKeys(pTextValue);
     }
-    
+
     public String getTextElement(By pBy) {
-    	WebElement element = driver.findElement(pBy);
+        WebElement element = driver.findElement(pBy);
         return element.getText();
     }
-    
+
     public String getTextElement(WebElement webElement) {
         return webElement.getText();
     }
@@ -69,20 +68,18 @@ public abstract class BasePage {
     public void selectItemInDropdown(By pBy, String valueItem) {
         Select select = new Select(driver.findElement(pBy));
         select.selectByVisibleText(valueItem);
-    }   
+    }
 
     public List<WebElement> findElements(By pBy) {
         return driver.findElements(pBy);
-    }    
+    }
 
-
-    public void RefreshPage()
-    {
-    	driver.navigate().refresh();
-    }   
+    public void RefreshPage() {
+        driver.navigate().refresh();
+    }
 
     public boolean isElementDisplayed(By pBy) {
-    	WebElement element = driver.findElement(pBy);
+        WebElement element = driver.findElement(pBy);
         waitToElementVisible(pBy);
         return element.isDisplayed();
     }
@@ -91,26 +88,29 @@ public abstract class BasePage {
         WebDriverWait waitExplicit = new WebDriverWait(driver, Duration.ofSeconds(longTimeout));
         waitExplicit.until(ExpectedConditions.visibilityOfElementLocated(pBy));
     }
+
     public void verifyElementVisible(By pBy, String pElementName) {
         WebElement element = driver.findElement(pBy);
         if (!element.isDisplayed()) {
             TestContext.addFailure("\r\n" + pElementName + " is invisible, it has to be visible");
         }
     }
-    
+
     public void verifyElementText(By pBy, String pElementName, String pExpectedResult) {
         WebElement element = driver.findElement(pBy);
         String actualResult = element.getText();
         if (!actualResult.contains(pExpectedResult)) {
-            TestContext.addFailure("\r\n" + pElementName + " with expected text: " + pExpectedResult + ". Current text is: " + actualResult);
+            TestContext.addFailure("\r\n" + pElementName + " with expected text: " + pExpectedResult
+                    + ". Current text is: " + actualResult);
         }
     }
 
-    	public void verifyWebsiteTitle(String pExpectedResult) {
-		String ActualResult = driver.getTitle();
-		if (!ActualResult.equals(pExpectedResult)) {
-			 TestContext.addFailure("Page title is different\nExpected to contain: '" + pExpectedResult + "'\nActual title: '" + ActualResult + "'\n");
-		}
-	
-	}
+    public void verifyWebsiteTitle(String pExpectedResult) {
+        String ActualResult = driver.getTitle();
+        if (!ActualResult.equals(pExpectedResult)) {
+            TestContext.addFailure("Page title is different\nExpected to contain: '" + pExpectedResult
+                    + "'\nActual title: '" + ActualResult + "'\n");
+        }
+
+    }
 }

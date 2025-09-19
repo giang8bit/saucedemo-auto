@@ -15,7 +15,7 @@ public class SortingTests extends BaseTest {
     public void sortLowToHigh() {
         ProductPage productPage = new LoginPage(driver)
                 .openSaucedemo()
-                .loginAccountAs(Config.STANDARD_USER, Config.PASSWORD);             
+                .loginAccountAs(Config.STANDARD_USER, Config.PASSWORD);
 
         productPage.sortBy("lohi");
         productPage.verifyIsSortedByPriceLowHigh();

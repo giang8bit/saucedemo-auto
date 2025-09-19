@@ -14,7 +14,7 @@ public class LoginTests extends BaseTest {
     public void validLogin() {
         LoginPage loginPage = new LoginPage(driver).openSaucedemo();
         ProductPage productPage;
-        
+
         productPage = loginPage.loginAccountAs(Config.STANDARD_USER, Config.PASSWORD);
         // Verify that we successfully landed on the product page
         productPage.verifyProductPageLoaded();
@@ -28,7 +28,7 @@ public class LoginTests extends BaseTest {
 
         loginPage.loginAccountAs(Config.LOCKED_USER, Config.PASSWORD);
         loginPage.verifyLoginErrorMessage("Epic sadface: Sorry, this user has been locked out.");
-        
+
         assertFinalResult();
     }
 

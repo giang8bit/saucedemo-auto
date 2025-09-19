@@ -15,7 +15,7 @@ public class BaseTest {
     private static final ThreadLocal<TCResult> threadLocalResult = new ThreadLocal<>();
     private static final ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
 
-    @Parameters({"browser"})
+    @Parameters({ "browser" })
     @BeforeMethod(alwaysRun = true)
     public void setup(@Optional("chrome") String browser) {
         // Initialize TCResult for this thread

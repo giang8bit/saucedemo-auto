@@ -15,15 +15,15 @@ public class CartTests extends BaseTest {
     public void addToCartIncrementsBadge() {
         String item1 = "Sauce Labs Backpack";
         String item2 = "Sauce Labs Bike Light";
-   
+
         ProductPage productPage = new LoginPage(driver)
                 .openSaucedemo()
                 .loginAccountAs(Config.STANDARD_USER, Config.PASSWORD);
 
         productPage.addItemByName(item1);
-        productPage.verifyCurrentItemInCartBadge(1); 
+        productPage.verifyCurrentItemInCartBadge(1);
         productPage.addItemByName(item2);
-        productPage.verifyCurrentItemInCartBadge(2); 
+        productPage.verifyCurrentItemInCartBadge(2);
         assertFinalResult();
     }
 }

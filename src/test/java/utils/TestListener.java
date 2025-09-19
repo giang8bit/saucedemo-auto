@@ -20,7 +20,8 @@ public class TestListener implements ITestListener, ISuiteListener {
 
     @Override
     public void onFinish(ISuite suite) {
-        if (extent != null) extent.flush();
+        if (extent != null)
+            extent.flush();
     }
 
     @Override
@@ -42,7 +43,8 @@ public class TestListener implements ITestListener, ISuiteListener {
                 String base64 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
                 TEST.get().addScreenCaptureFromBase64String(base64, "Failure screenshot");
             }
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
     }
 
     @Override

@@ -19,34 +19,42 @@ public class CheckoutFlowTests extends BaseTest {
     public void completePurchase() {
         String item1 = "Sauce Labs Backpack";
         String item2 = "Sauce Labs Bike Light";
-        
+
         ProductPage productPage = new LoginPage(driver)
                 .openSaucedemo()
-                .loginAccountAs(Config.STANDARD_USER, Config.PASSWORD);         
-        
+                .loginAccountAs(Config.STANDARD_USER, Config.PASSWORD);
+
         productPage.addItemByName(item1);
         productPage.addItemByName(item2);
         CartPage cartPage = productPage.BuyProducts();
         CheckoutPage checkoutPage = cartPage.checkoutProduct();
-        OrderConfirmationPage orderConfirmationPage = checkoutPage.PurchaseProduct("first name","last name","code");
-        orderConfirmationPage.verifyOrderItems(item1,item2);
+        OrderConfirmationPage orderConfirmationPage = checkoutPage.PurchaseProduct("first name", "last name", "code");
+        
+        orderConfirmationPage.verifyOrderItems(item1, item2);
         orderConfirmationPage.verifyTotalPrice(43.18);
-        orderConfirmationPage.verifyPaymentInformation("SauceCard #31337","Free Pony Express Delivery!");
+        orderConfirmationPage.verifyPaymentInformation("SauceCard #31337", "Free Pony Express Delivery!");
+        
+        orderConfirmationPage.clickFinishOrder();
+        orderConfirmationPage.verifyThankYouMessage();
+        orderConfirmationPage.clickBackHome();
+
+        productPage.verifyProductPageLoaded();
+
         assertFinalResult();
     }
 
     @Test(description = "Missing postal code shows validation error")
-    public void missingPostalCode() {   
+    public void missingPostalCode() {
         String item1 = "Sauce Labs Backpack";
-        
+
         ProductPage productPage = new LoginPage(driver)
                 .openSaucedemo()
-                .loginAccountAs(Config.STANDARD_USER, Config.PASSWORD);         
-        
+                .loginAccountAs(Config.STANDARD_USER, Config.PASSWORD);
+
         productPage.addItemByName(item1);
         CartPage cartPage = productPage.BuyProducts();
         CheckoutPage checkoutPage = cartPage.checkoutProduct();
-        checkoutPage.PurchaseProduct("name a","name B","");
+        checkoutPage.PurchaseProduct("name a", "name B", "");
         checkoutPage.verifyCheckOutErrorMessage("Error: Postal Code is required");
 
         assertFinalResult();
