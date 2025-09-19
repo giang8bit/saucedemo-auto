@@ -28,6 +28,7 @@ public class DriverFactory {
             default -> {
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions options = new ChromeOptions();
+                options.addArguments("--incognito");
                 DRIVER.set(new ChromeDriver(options));
             }
         }

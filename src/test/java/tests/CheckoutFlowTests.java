@@ -4,10 +4,12 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import pages.InventoryPage;
+import pages.ProductPage;
 import pages.LoginPage;
+import pages.OrderConfirmationPage;
+import pages.CartPage;
+import pages.CheckoutPage;
 import utils.Config;
-import utils.DriverFactory;
 import utils.TestListener;
 
 @Listeners(TestListener.class)
@@ -15,39 +17,38 @@ public class CheckoutFlowTests extends BaseTest {
 
     @Test(description = "Complete purchase flow end-to-end")
     public void completePurchase() {
-        var driver = DriverFactory.getDriver();
-        InventoryPage inv = new LoginPage(driver)
-                .open()
-                .loginAs(Config.STANDARD_USER, Config.PASSWORD);
-
-        inv.addItemByName("Sauce Labs Bike Light")
-          .goToCart()
-          .checkout();
-
-        // Checkout Step One
-        driver.findElement(By.id("first-name")).sendKeys("Jane");
-        driver.findElement(By.id("last-name")).sendKeys("Doe");
-        driver.findElement(By.id("postal-code")).sendKeys("10001");
-        driver.findElement(By.id("continue")).click();
-
-        // Step Two → Finish
-        driver.findElement(By.id("finish")).click();
-
-        // Complete
-        String header = driver.findElement(By.className("complete-header")).getText();
-        Assert.assertTrue(header.toLowerCase().contains("thank you"), "Should see thank you message");
+        String item1 = "Sauce Labs Backpack";
+        String item2 = "Sauce Labs Bike Light";
+        
+        ProductPage productPage = new LoginPage(driver)
+                .openSaucedemo()
+                .loginAccountAs(Config.STANDARD_USER, Config.PASSWORD);         
+        
+        productPage.addItemByName(item1);
+        productPage.addItemByName(item2);
+        CartPage cartPage = productPage.BuyProducts();
+        CheckoutPage checkoutPage = cartPage.checkoutProduct();
+        OrderConfirmationPage orderConfirmationPage = checkoutPage.PurchaseProduct("first name","last name","code");
+        orderConfirmationPage.verifyOrderItems(item1,item2);
+        orderConfirmationPage.verifyTotalPrice(43.18);
+        orderConfirmationPage.verifyPaymentInformation("SauceCard #31337","Free Pony Express Delivery!");
+        assertFinalResult();
     }
 
     @Test(description = "Missing postal code shows validation error")
-    public void missingPostalCode() {
-        var driver = DriverFactory.getDriver();
-        new LoginPage(driver).open().loginAs(Config.STANDARD_USER, Config.PASSWORD);
-        driver.findElement(By.className("shopping_cart_link")).click();
-        driver.findElement(By.id("checkout")).click();
-        driver.findElement(By.id("first-name")).sendKeys("A");
-        driver.findElement(By.id("last-name")).sendKeys("B");
-        driver.findElement(By.id("continue")).click();
-        String err = driver.findElement(By.cssSelector("[data-test='error']")).getText();
-        Assert.assertTrue(err.toLowerCase().contains("postal code"), "Expect postal code required error");
+    public void missingPostalCode() {   
+        String item1 = "Sauce Labs Backpack";
+        
+        ProductPage productPage = new LoginPage(driver)
+                .openSaucedemo()
+                .loginAccountAs(Config.STANDARD_USER, Config.PASSWORD);         
+        
+        productPage.addItemByName(item1);
+        CartPage cartPage = productPage.BuyProducts();
+        CheckoutPage checkoutPage = cartPage.checkoutProduct();
+        checkoutPage.PurchaseProduct("name a","name B","");
+        checkoutPage.verifyCheckOutErrorMessage("Error: Postal Code is required");
+
+        assertFinalResult();
     }
 }

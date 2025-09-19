@@ -1,4 +1,4 @@
-# Created at 2025-09-17T02:04:09.171
+# Created at 2025-09-18T00:56:48.671
 Boot Manifest-JAR contains absolute paths in classpath 'E:\saucedemo-auto\target\test-classes'
 Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
 'other' has different root

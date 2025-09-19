@@ -3,13 +3,18 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class CartPage {
-    private final WebDriver driver;
-    private final By checkoutBtn = By.id("checkout");
+public class CartPage extends BasePage{
+    private final By checkOutBtn = By.name("checkout");
 
-    public CartPage(WebDriver driver) { this.driver = driver; }
-
-    public void checkout() {
-        driver.findElement(checkoutBtn).click();
+    public CartPage(WebDriver driver) {
+        super(driver);
     }
+    
+    public CheckoutPage checkoutProduct() {
+        clickToElement(checkOutBtn);
+        return new CheckoutPage(driver);
+    }
+
+    
+
 }

@@ -1,4 +1,5 @@
 utils\TestListener.class
+pages\BasePage.class
 pages\InventoryPage.class
 tests\CartTests.class
 pages\LoginPage.class
