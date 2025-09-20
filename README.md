@@ -20,10 +20,6 @@ A comprehensive test automation framework for [SauceDemo](https://www.saucedemo.
 - **Chrome Browser** - Latest version recommended
 - **Git** - For version control
 
-### Optional
-- **Edge Browser** - For cross-browser testing
-- **Firefox Browser** - For cross-browser testing
-
 ## �️ Windows Setup Instructions
 
 ### Step 1: Install Java 17+
@@ -99,7 +95,7 @@ git --version
 
 ### 3. Run All Tests
 ```cmd
-mvn clean test
+mvn clean test -Dbrowser=chrome
 ```
 
 ### 4. View Reports
@@ -118,12 +114,6 @@ start reports\extent-report.html
 # Login functionality tests
 mvn test -Dtest=LoginTests
 
-# Shopping cart tests
-mvn test -Dtest=CartTests
-
-# Product sorting tests
-mvn test -Dtest=SortingTests
-
 # Complete checkout flow tests
 mvn test -Dtest=CheckoutFlowTests
 ```
@@ -137,15 +127,6 @@ mvn test -Dtest=LoginTests#validLogin
 mvn test -Dtest=LoginTests#validLogin,CartTests#addToCartIncrementsBadge
 ```
 
-### Cross-Browser Testing
-```bash
-# Chrome browser
-mvn clean test -Dbrowser=edge
-
-# Chrome browser
-mvn clean test -Dbrowser=chrome
-```
-
 ### 🖥️ Headless Mode Execution
 
 Run tests without browser UI for faster execution and CI/CD environments.
@@ -153,29 +134,20 @@ Run tests without browser UI for faster execution and CI/CD environments.
 #### Basic Headless Commands
 ```bash
 # All tests in headless mode
-mvn clean test -Dheadless=true
+mvn clean test -Dbrowser=chrome -Dheadless=true
 
 # Specific test class headless
 mvn test -Dtest=LoginTests -Dheadless=true
 
 ```
-#### Cross-Browser Headless
-```bash
-
-# Edge headless
-mvn clean test -Dbrowser=edge -Dheadless=true
-
-# Chrome headless
-mvn clean test -Dbrowser=firefox -Dheadless=true
-```
 
 #### Parallel + Headless (Recommended for CI/CD)
 ```bash
 # Fast parallel execution without UI
-mvn clean test -Dheadless=true
+mvn clean test -Dbrowser=chrome -Dheadless=true
 
 # Custom thread count with headless
-mvn clean test -Dheadless=true -DthreadCount=2
+mvn clean test -Dbrowser=chrome -Dheadless=true -DthreadCount=2
 ```
 
 ### Parallel Execution
