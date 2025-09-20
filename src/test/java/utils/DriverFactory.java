@@ -6,8 +6,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class DriverFactory {
     private static final ThreadLocal<WebDriver> DRIVER = new ThreadLocal<>();
@@ -31,17 +29,20 @@ public class DriverFactory {
 
                 DRIVER.set(new EdgeDriver(options));
             }
-            case "firefox" -> {
-                WebDriverManager.firefoxdriver().setup();
-                FirefoxOptions options = new FirefoxOptions();
+            case "chrome" -> {
+                WebDriverManager.chromedriver().setup();
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--incognito");
 
                 if (isHeadless) {
                     options.addArguments("--headless");
-                    options.addArguments("--width=1920");
-                    options.addArguments("--height=1080");
+                    options.addArguments("--disable-gpu");
+                    options.addArguments("--window-size=1920,1080");
+                    options.addArguments("--no-sandbox");
+                    options.addArguments("--disable-dev-shm-usage");
                 }
 
-                DRIVER.set(new FirefoxDriver(options));
+                DRIVER.set(new ChromeDriver(options));
             }
             default -> {
                 WebDriverManager.chromedriver().setup();

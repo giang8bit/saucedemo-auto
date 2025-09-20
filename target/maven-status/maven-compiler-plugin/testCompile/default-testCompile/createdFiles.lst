@@ -4,9 +4,11 @@ tests\CartTests.class
 pages\OrderConfirmationPage.class
 pages\ProductPage.class
 pages\LoginPage.class
+utils\DriverFactory.class
 utils\TestContext.class
 tests\SortingTests.class
 pages\CartPage.class
+utils\Config.class
 tests\BaseTest.class
 tests\CheckoutFlowTests.class
 tests\LoginTests.class

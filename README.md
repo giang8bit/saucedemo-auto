@@ -195,11 +195,7 @@ To modify parallel execution:
 ```
 saucedemo-auto/
 ├── src/
-│   ├── main/java/
-│   │   └── utils/
-│   │       ├── Config.java          # Test configuration constants
-│   │       └── DriverFactory.java   # WebDriver management
-│   └── test/java/
+│   └── test/java/                   # All test-related code consolidated here
 │       ├── pages/                   # Page Object Model classes
 │       │   ├── BasePage.java        # Base page with common methods
 │       │   ├── LoginPage.java       # Login page actions
@@ -213,7 +209,9 @@ saucedemo-auto/
 │       │   ├── CartTests.java       # Cart functionality tests
 │       │   ├── SortingTests.java    # Product sorting tests
 │       │   └── CheckoutFlowTests.java # End-to-end checkout tests
-│       └── utils/                   # Test utilities
+│       └── utils/                   # Utilities and configuration
+│           ├── Config.java          # Test configuration constants
+│           ├── DriverFactory.java   # WebDriver management
 │           ├── TestContext.java     # Thread-safe test context
 │           ├── TestListener.java    # TestNG listener for reporting
 │           └── TCResult.java        # Test result management
@@ -236,7 +234,7 @@ saucedemo-auto/
 
 ## ⚙️ Configuration
 ### Test Data Configuration
-Edit `src/main/java/utils/Config.java` for test data:
+Edit `src/test/java/utils/Config.java` for test data:
 ```java
 public static final String BASE_URL = "https://www.saucedemo.com/";
 public static final String STANDARD_USER = "standard_user";

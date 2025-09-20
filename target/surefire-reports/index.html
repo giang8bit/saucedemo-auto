@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-SauceDemo_Suite" class="navigator-link">
-              <span class="suite-name border-skipped">SauceDemo Suite</span>
+              <span class="suite-name border-passed">SauceDemo Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,26 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">8 methods,  2 skipped,  6 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-SauceDemo_Suite" class="hide-methods skipped suite-SauceDemo_Suite"> (hide)</a> <!-- hide-methods skipped suite-SauceDemo_Suite -->
-                      <a href="#" panel-name="suite-SauceDemo_Suite" class="show-methods skipped suite-SauceDemo_Suite"> (show)</a> <!-- show-methods skipped suite-SauceDemo_Suite -->
-                    </span>
-                    <div class="method-list-content skipped suite-SauceDemo_Suite">
-                      <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.LoginTests" class="method navigator-link" hash-for-method="lockedUserLogin">lockedUserLogin</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.LoginTests" class="method navigator-link" hash-for-method="validLogin">validLogin</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content skipped suite-SauceDemo_Suite -->
+                    <span class="method-stats">8 methods,   8 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -137,12 +118,22 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.LoginTests" class="method navigator-link" hash-for-method="lockedUserLogin">lockedUserLogin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.CheckoutFlowTests" class="method navigator-link" hash-for-method="missingPostalCode">missingPostalCode</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.SortingTests" class="method navigator-link" hash-for-method="sortLowToHigh">sortLowToHigh</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SauceDemo_Suite" title="tests.LoginTests" class="method navigator-link" hash-for-method="validLogin">validLogin</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -162,157 +153,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-SauceDemo_Suite" class="panel SauceDemo_Suite">
-          <div class="suite-SauceDemo_Suite-class-skipped">
-            <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-              <span class="class-name">tests.LoginTests</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="lockedUserLogin">
-                  </a> <!-- lockedUserLogin -->
-                  <span class="method-name">lockedUserLogin</span>
-                  <div class="stack-trace">io.github.bonigarcia.wdm.config.WebDriverManagerException: io.github.bonigarcia.wdm.config.WebDriverManagerException: org.apache.hc.client5.http.HttpHostConnectException: Connect to https://msedgedriver.azureedge.net:443 [msedgedriver.azureedge.net/125.235.4.59] failed: Connection timed out: no further information
-	at io.github.bonigarcia.wdm.WebDriverManager.handleException(WebDriverManager.java:1421)
-	at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:1190)
-	at io.github.bonigarcia.wdm.WebDriverManager.fallback(WebDriverManager.java:1437)
-	at io.github.bonigarcia.wdm.WebDriverManager.handleException(WebDriverManager.java:1415)
-	at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:1190)
-	at io.github.bonigarcia.wdm.WebDriverManager.setup(WebDriverManager.java:427)
-	at utils.DriverFactory.initDriver(DriverFactory.java:21)
-	at tests.BaseTest.setup(BaseTest.java:25)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: io.github.bonigarcia.wdm.config.WebDriverManagerException: org.apache.hc.client5.http.HttpHostConnectException: Connect to https://msedgedriver.azureedge.net:443 [msedgedriver.azureedge.net/125.235.4.59] failed: Connection timed out: no further information
-	at io.github.bonigarcia.wdm.WebDriverManager.getDriversFromXml(WebDriverManager.java:1588)
-	at io.github.bonigarcia.wdm.managers.EdgeDriverManager.getDriverUrls(EdgeDriverManager.java:115)
-	at io.github.bonigarcia.wdm.WebDriverManager.createUrlHandler(WebDriverManager.java:1442)
-	at io.github.bonigarcia.wdm.WebDriverManager.download(WebDriverManager.java:1268)
-	at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:1184)
-	... 26 more
-Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to https://msedgedriver.azureedge.net:443 [msedgedriver.azureedge.net/125.235.4.59] failed: Connection timed out: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:751)
-	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory.lambda$connectSocket$0(SSLConnectionSocketFactory.java:232)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
-	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:231)
-	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:181)
-	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:447)
-	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
-	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
-	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
-	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
-	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
-	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
-	at io.github.bonigarcia.wdm.online.HttpClient.execute(HttpClient.java:157)
-	at io.github.bonigarcia.wdm.WebDriverManager.getDriversFromXml(WebDriverManager.java:1573)
-	... 30 more
-... Removed 15 stack frames
-</div> <!-- stack-trace -->
-                  <em>
-(Locked user shows error)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="validLogin">
-                  </a> <!-- validLogin -->
-                  <span class="method-name">validLogin</span>
-                  <div class="stack-trace">io.github.bonigarcia.wdm.config.WebDriverManagerException: io.github.bonigarcia.wdm.config.WebDriverManagerException: org.apache.hc.client5.http.HttpHostConnectException: Connect to https://msedgedriver.azureedge.net:443 [msedgedriver.azureedge.net/125.235.4.59] failed: Connection timed out: no further information
-	at io.github.bonigarcia.wdm.WebDriverManager.handleException(WebDriverManager.java:1421)
-	at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:1190)
-	at io.github.bonigarcia.wdm.WebDriverManager.fallback(WebDriverManager.java:1437)
-	at io.github.bonigarcia.wdm.WebDriverManager.handleException(WebDriverManager.java:1415)
-	at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:1190)
-	at io.github.bonigarcia.wdm.WebDriverManager.setup(WebDriverManager.java:427)
-	at utils.DriverFactory.initDriver(DriverFactory.java:21)
-	at tests.BaseTest.setup(BaseTest.java:25)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: io.github.bonigarcia.wdm.config.WebDriverManagerException: org.apache.hc.client5.http.HttpHostConnectException: Connect to https://msedgedriver.azureedge.net:443 [msedgedriver.azureedge.net/125.235.4.59] failed: Connection timed out: no further information
-	at io.github.bonigarcia.wdm.WebDriverManager.getDriversFromXml(WebDriverManager.java:1588)
-	at io.github.bonigarcia.wdm.managers.EdgeDriverManager.getDriverUrls(EdgeDriverManager.java:115)
-	at io.github.bonigarcia.wdm.WebDriverManager.createUrlHandler(WebDriverManager.java:1442)
-	at io.github.bonigarcia.wdm.WebDriverManager.download(WebDriverManager.java:1268)
-	at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:1184)
-	... 26 more
-Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to https://msedgedriver.azureedge.net:443 [msedgedriver.azureedge.net/125.235.4.59] failed: Connection timed out: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:751)
-	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory.lambda$connectSocket$0(SSLConnectionSocketFactory.java:232)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
-	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:231)
-	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:181)
-	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:447)
-	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
-	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
-	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
-	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
-	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
-	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
-	at io.github.bonigarcia.wdm.online.HttpClient.execute(HttpClient.java:157)
-	at io.github.bonigarcia.wdm.WebDriverManager.getDriversFromXml(WebDriverManager.java:1573)
-	... 30 more
-... Removed 15 stack frames
-</div> <!-- stack-trace -->
-                  <em>
-(Valid login lands on product page)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-SauceDemo_Suite-class-skipped -->
-          <div class="suite-SauceDemo_Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">tests.CartTests</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="addToCartIncrementsBadge">
-                  </a> <!-- addToCartIncrementsBadge -->
-                  <span class="method-name">addToCartIncrementsBadge</span>
-                  <em>
-(Add item increases cart badge)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-SauceDemo_Suite-class-passed -->
           <div class="suite-SauceDemo_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -356,11 +196,46 @@ Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to https
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="lockedUserLogin">
+                  </a> <!-- lockedUserLogin -->
+                  <span class="method-name">lockedUserLogin</span>
+                  <em>
+(Locked user shows error)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="validLogin">
                   </a> <!-- validLogin -->
                   <span class="method-name">validLogin</span>
                   <em>
 (Valid login lands on product page)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validLogin">
+                  </a> <!-- validLogin -->
+                  <span class="method-name">validLogin</span>
+                  <em>
+(Valid login lands on product page)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SauceDemo_Suite-class-passed -->
+          <div class="suite-SauceDemo_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">tests.CartTests</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="addToCartIncrementsBadge">
+                  </a> <!-- addToCartIncrementsBadge -->
+                  <span class="method-name">addToCartIncrementsBadge</span>
+                  <em>
+(Add item increases cart badge)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -391,11 +266,11 @@ Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to https
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite thread-count=&quot;3&quot; parallel=&quot;classes&quot; data-provider-thread-count=&quot;1&quot; name=&quot;SauceDemo Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+&lt;suite thread-count=&quot;2&quot; parallel=&quot;classes&quot; data-provider-thread-count=&quot;1&quot; name=&quot;SauceDemo Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;utils.TestListener&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;3&quot; parallel=&quot;classes&quot; name=&quot;Chrome&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;2&quot; parallel=&quot;classes&quot; name=&quot;Chrome&quot; verbose=&quot;0&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;tests.LoginTests&quot;/&gt;
@@ -404,7 +279,7 @@ Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to https
       &lt;class name=&quot;tests.CheckoutFlowTests&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Chrome --&gt;
-  &lt;test thread-count=&quot;3&quot; parallel=&quot;methods&quot; name=&quot;Edge&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;2&quot; parallel=&quot;methods&quot; name=&quot;Edge&quot; verbose=&quot;0&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;edge&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;tests.LoginTests&quot;/&gt;
@@ -452,42 +327,42 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(8);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'missingPostalCode')
+data.setCell(0, 1, 'completePurchase')
 data.setCell(0, 2, 'tests.CheckoutFlowTests')
-data.setCell(0, 3, 2624);
+data.setCell(0, 3, 1702);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'completePurchase')
+data.setCell(1, 1, 'missingPostalCode')
 data.setCell(1, 2, 'tests.CheckoutFlowTests')
-data.setCell(1, 3, 2342);
+data.setCell(1, 3, 1370);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'addToCartIncrementsBadge')
-data.setCell(2, 2, 'tests.CartTests')
-data.setCell(2, 3, 1777);
+data.setCell(2, 1, 'sortLowToHigh')
+data.setCell(2, 2, 'tests.SortingTests')
+data.setCell(2, 3, 1202);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'sortLowToHigh')
-data.setCell(3, 2, 'tests.SortingTests')
-data.setCell(3, 3, 1587);
+data.setCell(3, 1, 'addToCartIncrementsBadge')
+data.setCell(3, 2, 'tests.CartTests')
+data.setCell(3, 3, 1195);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'lockedUserLogin')
+data.setCell(4, 1, 'validLogin')
 data.setCell(4, 2, 'tests.LoginTests')
-data.setCell(4, 3, 1229);
+data.setCell(4, 3, 1152);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'validLogin')
+data.setCell(5, 1, 'lockedUserLogin')
 data.setCell(5, 2, 'tests.LoginTests')
-data.setCell(5, 3, 998);
+data.setCell(5, 3, 1140);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'validLogin')
 data.setCell(6, 2, 'tests.LoginTests')
-data.setCell(6, 3, 0);
+data.setCell(6, 3, 1020);
 data.setCell(7, 0, 7)
 data.setCell(7, 1, 'lockedUserLogin')
 data.setCell(7, 2, 'tests.LoginTests')
-data.setCell(7, 3, 0);
+data.setCell(7, 3, 982);
 window.suiteTableData['SauceDemo_Suite']= { tableData: data, tableDiv: 'times-div-SauceDemo_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 10 seconds</span>
+              <span class="suite-total-time">Total running time: 9 seconds</span>
               <div id="times-div-SauceDemo_Suite">
               </div> <!-- times-div-SauceDemo_Suite -->
             </div> <!-- times-div -->
@@ -513,20 +388,6 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">tests.CartTests</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">setup(chrome)</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-method before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">tests.LoginTests</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">setup(chrome)</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-method before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
               <div class="chronological-class-name">tests.CheckoutFlowTests</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setup(chrome)</span>
@@ -535,118 +396,133 @@ return data;
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.CartTests</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">addToCartIncrementsBadge</span>
-                <span class="method-start">1461 ms</span>
-              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup(chrome)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.CheckoutFlowTests</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">completePurchase</span>
-                <span class="method-start">1461 ms</span>
+                <span class="method-start">2032 ms</span>
               </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.CartTests</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">addToCartIncrementsBadge</span>
+                <span class="method-start">2032 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">3230 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.LoginTests</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup(chrome)</span>
+                <span class="method-start">3328 ms</span>
+              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.CheckoutFlowTests</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">3734 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup(chrome)</span>
+                <span class="method-start">3825 ms</span>
+              </div> <!-- configuration-method before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.LoginTests</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">validLogin</span>
-                <span class="method-start">1461 ms</span>
+                <span class="method-start">3935 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">teardown</span>
-                <span class="method-start">2462 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setup(chrome)</span>
-                <span class="method-start">2576 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">lockedUserLogin</span>
-                <span class="method-start">3175 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">tests.CartTests</div> <!-- chronological-class-name -->
-              <div class="configuration-method after">
-                <span class="method-name">teardown</span>
-                <span class="method-start">3238 ms</span>
-              </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">tests.SortingTests</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">setup(chrome)</span>
-                <span class="method-start">3355 ms</span>
-              </div> <!-- configuration-method before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">tests.CheckoutFlowTests</div> <!-- chronological-class-name -->
-              <div class="configuration-method after">
-                <span class="method-name">teardown</span>
-                <span class="method-start">3804 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setup(chrome)</span>
-                <span class="method-start">3894 ms</span>
-              </div> <!-- configuration-method before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">tests.SortingTests</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">sortLowToHigh</span>
-                <span class="method-start">3964 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">tests.LoginTests</div> <!-- chronological-class-name -->
-              <div class="configuration-method after">
-                <span class="method-name">teardown</span>
-                <span class="method-start">4405 ms</span>
-              </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.CheckoutFlowTests</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">missingPostalCode</span>
-                <span class="method-start">4529 ms</span>
+                <span class="method-start">4388 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">tests.SortingTests</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">tests.LoginTests</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">5552 ms</span>
+                <span class="method-start">4955 ms</span>
               </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup(chrome)</span>
+                <span class="method-start">5061 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">lockedUserLogin</span>
+                <span class="method-start">5618 ms</span>
+              </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.CheckoutFlowTests</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">7154 ms</span>
+                <span class="method-start">5758 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.SortingTests</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup(chrome)</span>
+                <span class="method-start">5864 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">sortLowToHigh</span>
+                <span class="method-start">6479 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.LoginTests</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">6600 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.SortingTests</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">7681 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.LoginTests</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">setup(edge)</span>
-                <span class="method-start">7276 ms</span>
+                <span class="method-name">setup(chrome)</span>
+                <span class="method-start">7804 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">setup(edge)</span>
-                <span class="method-start">7277 ms</span>
+                <span class="method-name">setup(chrome)</span>
+                <span class="method-start">7804 ms</span>
               </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">lockedUserLogin</span>
+                <span class="method-start">8475 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">validLogin</span>
+                <span class="method-start">8475 ms</span>
+              </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">133836 ms</span>
+                <span class="method-start">9616 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">142350 ms</span>
+                <span class="method-start">9628 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
