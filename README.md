@@ -93,12 +93,19 @@ mvn -version
 git --version
 ```
 
-### 3. Run All Tests
+### 3. Install Dependencies
+```cmd
+# Download and install all project dependencies
+mvn clean install
+```
+**Note**: This step downloads Selenium, TestNG, WebDriverManager and other dependencies. First run may take a few minutes.
+
+### 4. Run All Tests
 ```cmd
 mvn clean test -Dbrowser=chrome
 ```
 
-### 4. View Reports
+### 5. View Reports
 ```cmd
 # Open report in default browser
 start reports\extent-report.html
@@ -112,19 +119,19 @@ start reports\extent-report.html
 ### Run Specific Test Classes
 ```bash
 # Login functionality tests
-mvn test -Dtest=LoginTests
+mvn clean test -Dtest=LoginTests
 
 # Complete checkout flow tests
-mvn test -Dtest=CheckoutFlowTests
+mvn clean test -Dtest=CheckoutFlowTests
 ```
 
 ### Run Specific Test Methods
 ```bash
 # Single test method
-mvn test -Dtest=LoginTests#validLogin
+mvn clean test -Dtest=LoginTests#validLogin
 
 # Multiple test methods
-mvn test -Dtest=LoginTests#validLogin,CartTests#addToCartIncrementsBadge
+mvn clean test -Dtest=LoginTests#validLogin,CartTests#addToCartIncrementsBadge
 ```
 
 ### 🖥️ Headless Mode Execution
@@ -137,7 +144,7 @@ Run tests without browser UI for faster execution and CI/CD environments.
 mvn clean test -Dbrowser=chrome -Dheadless=true
 
 # Specific test class headless
-mvn test -Dtest=LoginTests -Dheadless=true
+mvn clean test -Dtest=LoginTests -Dheadless=true
 
 ```
 
