@@ -1,11 +1,13 @@
 package tests;
 
+import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import utils.DriverFactory;
 import utils.TCResult;
 import utils.TestContext;
+import utils.TestListener;
 
 public class BaseTest {
     public TCResult Result;
@@ -52,5 +54,10 @@ public class BaseTest {
 
     protected TCResult getThreadSafeResult() {
         return threadLocalResult.get();
+    }
+
+    // Get current ExtentTest instance for logging
+    protected ExtentTest getExtentTest() {
+        return TestListener.getExtentTest();
     }
 }

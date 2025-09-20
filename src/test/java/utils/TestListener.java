@@ -51,4 +51,9 @@ public class TestListener implements ITestListener, ISuiteListener {
     public void onTestSkipped(ITestResult result) {
         TEST.get().skip("Skipped");
     }
+
+    // Public method to get current ExtentTest instance
+    public static ExtentTest getExtentTest() {
+        return TEST.get();
+    }
 }
