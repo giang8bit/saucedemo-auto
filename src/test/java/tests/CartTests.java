@@ -11,12 +11,12 @@ import utils.TestListener;
 @Listeners(TestListener.class)
 public class CartTests extends BaseTest {
 
-    @Test(description = "Add item increases cart badge")
+    @Test(description = "Add item increases cart badge", priority = 1)
     public void addToCartIncrementsBadge() {
         String item1 = "Sauce Labs Backpack";
         String item2 = "Sauce Labs Bike Light";
 
-        ProductPage productPage = new LoginPage(driver)
+        ProductPage productPage = new LoginPage(getDriver())
                 .openSaucedemo()
                 .loginAccountAs(Config.STANDARD_USER, Config.PASSWORD);
 

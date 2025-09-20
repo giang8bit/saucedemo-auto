@@ -14,25 +14,56 @@ public class DriverFactory {
 
     public static void initDriver(String browser) {
         String b = (browser == null) ? "chrome" : browser.toLowerCase();
+        boolean isHeadless = Boolean.parseBoolean(System.getProperty("headless", "false"));
+
         switch (b) {
             case "edge" -> {
                 WebDriverManager.edgedriver().setup();
                 EdgeOptions options = new EdgeOptions();
+
+                if (isHeadless) {
+                    options.addArguments("--headless");
+                    options.addArguments("--disable-gpu");
+                    options.addArguments("--window-size=1920,1080");
+                    options.addArguments("--no-sandbox");
+                    options.addArguments("--disable-dev-shm-usage");
+                }
+
                 DRIVER.set(new EdgeDriver(options));
             }
             case "firefox" -> {
                 WebDriverManager.firefoxdriver().setup();
                 FirefoxOptions options = new FirefoxOptions();
+
+                if (isHeadless) {
+                    options.addArguments("--headless");
+                    options.addArguments("--width=1920");
+                    options.addArguments("--height=1080");
+                }
+
                 DRIVER.set(new FirefoxDriver(options));
             }
             default -> {
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("--incognito");
+
+                if (isHeadless) {
+                    options.addArguments("--headless");
+                    options.addArguments("--disable-gpu");
+                    options.addArguments("--window-size=1920,1080");
+                    options.addArguments("--no-sandbox");
+                    options.addArguments("--disable-dev-shm-usage");
+                }
+
                 DRIVER.set(new ChromeDriver(options));
             }
         }
-        DRIVER.get().manage().window().maximize();
+
+        // Only maximize window if not in headless mode
+        if (!isHeadless) {
+            DRIVER.get().manage().window().maximize();
+        }
     }
 
     public static WebDriver getDriver() { return DRIVER.get(); }

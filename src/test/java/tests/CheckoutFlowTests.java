@@ -15,12 +15,12 @@ import utils.TestListener;
 @Listeners(TestListener.class)
 public class CheckoutFlowTests extends BaseTest {
 
-    @Test(description = "Complete purchase flow end-to-end")
+    @Test(description = "Complete purchase flow end-to-end", priority = 1)
     public void completePurchase() {
         String item1 = "Sauce Labs Backpack";
         String item2 = "Sauce Labs Bike Light";
 
-        ProductPage productPage = new LoginPage(driver)
+        ProductPage productPage = new LoginPage(getDriver())
                 .openSaucedemo()
                 .loginAccountAs(Config.STANDARD_USER, Config.PASSWORD);
 
@@ -43,11 +43,11 @@ public class CheckoutFlowTests extends BaseTest {
         assertFinalResult();
     }
 
-    @Test(description = "Missing postal code shows validation error")
+    @Test(description = "Missing postal code shows validation error", priority = 2)
     public void missingPostalCode() {
         String item1 = "Sauce Labs Backpack";
 
-        ProductPage productPage = new LoginPage(driver)
+        ProductPage productPage = new LoginPage(getDriver())
                 .openSaucedemo()
                 .loginAccountAs(Config.STANDARD_USER, Config.PASSWORD);
 

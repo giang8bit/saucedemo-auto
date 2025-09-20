@@ -10,9 +10,9 @@ import utils.TestListener;
 @Listeners(TestListener.class)
 public class LoginTests extends BaseTest {
 
-    @Test(description = "Valid login lands on inventory page")
+    @Test(description = "Valid login lands on product page", priority = 1)
     public void validLogin() {
-        LoginPage loginPage = new LoginPage(driver).openSaucedemo();
+        LoginPage loginPage = new LoginPage(getDriver()).openSaucedemo();
         ProductPage productPage;
 
         productPage = loginPage.loginAccountAs(Config.STANDARD_USER, Config.PASSWORD);
@@ -22,9 +22,9 @@ public class LoginTests extends BaseTest {
         assertFinalResult();
     }
 
-    @Test(description = "Locked user shows error")
+    @Test(description = "Locked user shows error", priority = 2)
     public void lockedUserLogin() {
-        LoginPage loginPage = new LoginPage(driver).openSaucedemo();
+        LoginPage loginPage = new LoginPage(getDriver()).openSaucedemo();
 
         loginPage.loginAccountAs(Config.LOCKED_USER, Config.PASSWORD);
         loginPage.verifyLoginErrorMessage("Epic sadface: Sorry, this user has been locked out.");

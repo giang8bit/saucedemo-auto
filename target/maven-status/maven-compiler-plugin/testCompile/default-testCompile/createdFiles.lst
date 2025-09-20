@@ -1,10 +1,14 @@
 utils\TestListener.class
 pages\BasePage.class
-pages\InventoryPage.class
 tests\CartTests.class
+pages\OrderConfirmationPage.class
+pages\ProductPage.class
 pages\LoginPage.class
-tests\LoginTests.class
+utils\TestContext.class
 tests\SortingTests.class
 pages\CartPage.class
 tests\BaseTest.class
 tests\CheckoutFlowTests.class
+tests\LoginTests.class
+pages\CheckoutPage.class
+utils\TCResult.class

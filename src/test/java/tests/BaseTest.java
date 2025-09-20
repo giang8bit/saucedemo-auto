@@ -8,10 +8,8 @@ import utils.TCResult;
 import utils.TestContext;
 
 public class BaseTest {
-    public WebDriver driver;
     public TCResult Result;
 
-    // For thread safety in parallel execution
     private static final ThreadLocal<TCResult> threadLocalResult = new ThreadLocal<>();
     private static final ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
 
@@ -25,27 +23,29 @@ public class BaseTest {
 
         // Initialize WebDriver for this thread
         DriverFactory.initDriver(browser);
-        driver = DriverFactory.getDriver();
-        threadLocalDriver.set(driver);
-        TestContext.setDriver(driver); // Also set in TestContext for global access
+        WebDriver webDriver = DriverFactory.getDriver();
+        threadLocalDriver.set(webDriver);
+        TestContext.setDriver(webDriver); // Also set in TestContext for global access
     }
 
     @AfterMethod(alwaysRun = true)
     public void teardown() {
         DriverFactory.quitDriver();
 
-        // Clean up ThreadLocal variables to prevent memory leaks
         threadLocalResult.remove();
         threadLocalDriver.remove();
-        TestContext.cleanup(); // Clean up TestContext as well
+        TestContext.cleanup();
     }
 
-    // Helper method to perform final assertion - call this at end of each test
     protected void assertFinalResult() {
         Assert.assertTrue(Result.GetResult(), Result.GetMessage());
     }
 
     // Thread-safe getter methods
+    protected WebDriver getDriver() {
+        return TestContext.getDriver();
+    }
+
     protected WebDriver getThreadSafeDriver() {
         return threadLocalDriver.get();
     }
